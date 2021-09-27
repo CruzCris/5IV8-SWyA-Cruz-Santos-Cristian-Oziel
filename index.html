@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrados</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+<body>
+    <article class="wrapper">
+        <div class="cifrados">
+            <header class="header">
+                <h1 class="titulo">CIFRADOS CÉSAR Y VIGGENERE CASEROS</h1>
+            </header>
+            <div class="dos">
+                <div class="Cesar">
+                    <h2 class="ctitle">Cifrado César</h3>
+                    <p class="txt">Ingrese el mensaje a cifrar o descifrar:</p>
+                    <textarea id="ctext" rows="3" cols="40" class="txtarea"></textarea>
+                    <br><br>
+                    <input class="ci1" type="button" id="cci" value="CIFRAR" onclick="ccifrar()">
+                    <input type="button" id="cdes" value="DESCIFRAR" onclick="cdescifrar()" class="des1">
+                    <br><br>
+                    <textarea id="cresul" readonly rows="3" cols="40" class="txtarea"></textarea>
+                </div>
+                <div class="Viggenere">
+                    <h2 class="vtitle">Cifrado Viggenere</h3>
+                    <p class="txt">Ingrese el mensaje a cifrar o descifrar:</p>
+                    <textarea id="vtext" rows="3" cols="40" class="txtarea"></textarea>
+                    <p class="txt">Ingrese la llave:</p>
+                    <textarea id="llave" rows="2" cols="40" class="txtarea"></textarea>
+                    <br><br>
+                    <input type="button" id="vci" value="CIFRAR" onclick="RebuildString(Encriptar(true))" class="ci">
+                    <input type="button" id="vdes" value="DESCIFRAR" onclick="RebuildString(Encriptar(false))" class="des">
+                    <input type="button" id="breset" value="RESET" onclick="reset()" class="res">
+                    <br><br>
+                    <textarea id="vresul" readonly rows="3" cols="40" class="txtarea"></textarea>
+                </div>
+            </div>
+        </div>
+    </article>
+    <footer>Cruz Santos Cristian Oziel 5IV8</footer>
+    <script src="js/cifrados.js"></script>
+</body>
+</html>

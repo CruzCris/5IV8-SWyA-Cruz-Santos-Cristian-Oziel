@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap') repeat scroll 0 0 rgba(0, 0, 0 , 0);
+
+body {
+  background: #fff;
+}
+
+.h1 {
+  font-size: 2.5rem;
+  font-family: 'Lobster', cursive;
+  color: #89e3ec;
+}
+
+.wrapper {
+  animation: scroll 70s linear infinite;
+  background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"), #111111;
+  color: #eee;
+  height: 100vh;
+  min-width: 360px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  
+}
+
+@keyframes scroll {
+   100%{
+    background-position:0px -3000px;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .wrapper {
+    animation: scroll 200s linear infinite;
+  }
+}
+
+@media (min-width: 670px) {
+  .title {
+    font-size: 5rem;
+  }
+}
+
+.header{
+margin-top: auto;
+text-align: center; 
+font-weight:bold; 
+font-size: 30px; 
+text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68; 6px 6px #414D68, 7px 7px #414D68, 8px 8px #414D68, 9px 9px #414D68;
+}
+
+.dos{
+  display: inline-block;
+  height:auto;
+}
+.Cesar, .Viggenere{
+  width: 476.36px;
+}
+.Cesar{
+  margin-left: 70%;
+}
+.Viggenere{
+  margin-left: 70%;
+}
+.txtarea{
+  margin-right: 100%;
+}
+.ctitle{
+  margin-left: 18%;
+  color: #000103;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+.vtitle{
+  margin-left: 12%;
+  color: #000103;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+.ci1, .des1{
+  margin-left: 15%;
+}
+.res, .des, .ci{
+  margin-left: 40px;
+}
+.txt{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
