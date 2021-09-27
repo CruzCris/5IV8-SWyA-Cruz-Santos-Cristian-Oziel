@@ -65,15 +65,25 @@ var cesar = cesar || (function(){
 //funcion de cifrado
 
 function ccifrar(){
-    document.getElementById('cresul').innerHTML =
-    cesar.encode(document.getElementById('ctext').value, 3);
+    txt=document.getElementById('ctext').value;
+    if(txt==""){
+        alert("Debe llenar el campo solicitado antes de cifrar");
+    }else{
+        document.getElementById('cresul').innerHTML =
+        cesar.encode(document.getElementById('ctext').value, 3);
+    }
 }
 
 //funcion de descifrado
 
 function cdescifrar(){
-    document.getElementById("cresul").innerHTML =
-    cesar.decode(document.getElementById("ctext").value, 3);
+    txt=document.getElementById('ctext').value;
+    if(txt==""){
+        alert("Debe llenar el campo solicitado antes de cifrar");
+    }else{
+        document.getElementById("cresul").innerHTML =
+        cesar.decode(document.getElementById("ctext").value, 3);
+    }
 }
 
 //------------------------
@@ -113,44 +123,50 @@ function PhraseToArray(Frase){
     var GetPhrase = document.getElementById('vtext').value;
     var GetPass = document.getElementById('llave').value;
     var Codes = [];
-    if(GetPhrase.length < 1 || GetPass.length < 1)
-    {
-     alert('La frase no puede estar en blanco')
-     return;
-    }
-    var PassData = PhraseToArray(GetPass);
-    var PhraseData = PhraseToArray(GetPhrase);
-    var SpaceCount = 0;
-    if (ModeEnc == true)
-    {
-     for(var i = 0; i < PhraseData.length; i++)
-     {
-      if(PhraseData[i] == 32)
-      {
-       Codes.push(32);
-       SpaceCount += 1;
-      }else{
-       Codes.push((PassData[(i - SpaceCount) % PassData.length] + PhraseData[i]) % 27);
-      }
-     }
+    if(GetPass.length>GetPhrase.length){
+        alert("La llave no puede ser más grande que el mensaje");
+    }else if(GetPass=="" || GetPhrase==""){
+        alert("Debe llenar los campos solicitados");
     }else{
-     for(var i = 0; i < PhraseData.length; i++)
-     {
-      if(PhraseData[i] == 32)
-      {
-       Codes.push(32);
-       SpaceCount += 1;
-      }else{
-       var Value = PhraseData[i] - PassData[(i - SpaceCount) % PassData.length];
-       if (Value < 1)
-       {
-        Value += 27;
-       }
-      Codes.push(Value % 27);
-      }
-     }
+        if(GetPhrase.length < 1 || GetPass.length < 1)
+        {
+        alert('La frase no puede estar en blanco')
+        return;
+        }
+        var PassData = PhraseToArray(GetPass);
+        var PhraseData = PhraseToArray(GetPhrase);
+        var SpaceCount = 0;
+        if (ModeEnc == true)
+        {
+        for(var i = 0; i < PhraseData.length; i++)
+        {
+        if(PhraseData[i] == 32)
+        {
+        Codes.push(32);
+        SpaceCount += 1;
+        }else{
+        Codes.push((PassData[(i - SpaceCount) % PassData.length] + PhraseData[i]) % 27);
+        }
+        }
+        }else{
+        for(var i = 0; i < PhraseData.length; i++)
+        {
+        if(PhraseData[i] == 32)
+        {
+        Codes.push(32);
+        SpaceCount += 1;
+        }else{
+        var Value = PhraseData[i] - PassData[(i - SpaceCount) % PassData.length];
+        if (Value < 1)
+        {
+            Value += 27;
+        }
+        Codes.push(Value % 27);
+        }
+        }
+        }
+        return Codes;
     }
-    return Codes;
    }
    // Devolver el resultado
    function RebuildString(Codigos)
