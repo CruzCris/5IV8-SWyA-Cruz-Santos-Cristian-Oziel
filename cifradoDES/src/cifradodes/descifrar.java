@@ -214,8 +214,7 @@ public class descifrar extends javax.swing.JFrame {
                     out.close();
                     
                     JOptionPane.showMessageDialog(null, "El archivo descifrado se creó con exito");
-                    
-                    
+                    llave.setText("");
                     
                 }catch (FileNotFoundException ex) {
                     Logger.getLogger(cifrado.class.getName()).log(Level.SEVERE, null, ex);

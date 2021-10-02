@@ -223,6 +223,7 @@ public class cifrado extends javax.swing.JFrame {
                     out.close();
                     
                     JOptionPane.showMessageDialog(null, "El archivo cifrado se creó con exito");
+                    llave.setText("");
                     
                     
                     
