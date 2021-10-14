@@ -18,18 +18,28 @@
  }
 .ingresa{
   margin-left: 44%;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: gray;
 }
 .des{
   margin-left: 41.5%;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: gray;
 }
 .texto{
   margin-left: 39%;
 }
 .boton{
-  margin-left: 18%;
+  margin-left: 16%;
+  width: 150px;
+  height: 100px;
+  border-radius: 50%;
 }
 .boton2{
   margin-left: 16%;
+  width: 150px;
+  height: 100px;
+  border-radius: 50%;
 }
 
 :root {
