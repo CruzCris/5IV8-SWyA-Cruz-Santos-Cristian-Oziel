@@ -184,15 +184,13 @@ public class RSA_ventana extends javax.swing.JFrame {
         
         String tam = size.getText();
         System.out.println(tam);
-        int sizeS=Integer.parseInt(tam);
-        System.out.println(sizeS);
         String msj=message.getText();
-        if(sizeS>3 || sizeS<1){
-            JOptionPane.showMessageDialog(null, "El tamaño solo puede ser de uno a tres dígitos.");
-        }else if(verificarTxt(msj) != (true)){
-            JOptionPane.showMessageDialog(null, "El texto a cifrar sólo puede contener números.");
+        if(msj.equals("") || tam.equals("")){
+            JOptionPane.showMessageDialog(null, "Los campos no pueden estar vacíos.");
+        /*}else if(){
+        */
         }else{
-            Proceso(sizeS,msj);
+            Proceso(tam,msj);
         }
             
         
@@ -251,9 +249,10 @@ public class RSA_ventana extends javax.swing.JFrame {
     private javax.swing.JTextField size;
     // End of variables declaration//GEN-END:variables
 
-    private void Proceso(int size, String msj) {
+    private void Proceso(String size, String msj) {
 
-        int tam=size;
+        int tam=Integer.parseInt(size);
+        System.out.println(tam);
         BigInteger n,p,q;
         BigInteger fi;
         BigInteger e,d;
